@@ -6492,59 +6492,84 @@ var $;
         $my_option.prototype.pages = function () {
             return [].concat(this.Placeholder(), this.Rooms(), this.Room());
         };
-        $my_option.prototype.greeting_0 = function () {
-            return $.$mol_locale.text(this.locale_contexts(), "greeting_0");
+        $my_option.prototype.greeting_GBPJPY_0 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_GBPJPY_0");
         };
-        $my_option.prototype.greeting_1 = function () {
-            return $.$mol_locale.text(this.locale_contexts(), "greeting_1");
+        $my_option.prototype.greeting_GBPJPY_1 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_GBPJPY_1");
         };
-        $my_option.prototype.greeting_2 = function () {
-            return $.$mol_locale.text(this.locale_contexts(), "greeting_2");
+        $my_option.prototype.greeting_GBPJPY_2 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_GBPJPY_2");
         };
-        $my_option.prototype.greeting_3 = function () {
-            return $.$mol_locale.text(this.locale_contexts(), "greeting_3");
+        $my_option.prototype.greeting_GBPJPY_3 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_GBPJPY_3");
+        };
+        $my_option.prototype.greeting_GBPJPY_4 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_GBPJPY_4");
+        };
+        $my_option.prototype.greeting_NZDUSD_0 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_NZDUSD_0");
+        };
+        $my_option.prototype.greeting_NZDUSD_1 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_NZDUSD_1");
+        };
+        $my_option.prototype.greeting_NZDUSD_2 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_NZDUSD_2");
+        };
+        $my_option.prototype.greeting_USDCAD_0 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDCAD_0");
+        };
+        $my_option.prototype.greeting_USDCAD_1 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDCAD_1");
+        };
+        $my_option.prototype.greeting_USDCAD_2 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDCAD_2");
+        };
+        $my_option.prototype.greeting_USDCAD_3 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDCAD_3");
+        };
+        $my_option.prototype.greeting_USDCAD_4 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDCAD_4");
+        };
+        $my_option.prototype.greeting_USDCAD_5 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDCAD_5");
+        };
+        $my_option.prototype.greeting_USDJPY_0 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDJPY_0");
+        };
+        $my_option.prototype.greeting_USDJPY_1 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDJPY_1");
+        };
+        $my_option.prototype.greeting_USDJPY_2 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDJPY_2");
+        };
+        $my_option.prototype.greeting_USDJPY_3 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDJPY_3");
+        };
+        $my_option.prototype.greeting_USDJPY_4 = function () {
+            return $.$mol_locale.text(this.locale_contexts(), "greeting_USDJPY_4");
         };
         $my_option.prototype.rooms_data = function () {
             return ({
-                "GBPCHF": ({
-                    "name": "GBP / CHF",
-                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
-                    "photo_count": 4,
-                }),
                 "GBPJPY": ({
                     "name": "GBP / JPY",
-                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
-                    "photo_count": 4,
+                    "greeting": [].concat(this.greeting_GBPJPY_0(), this.greeting_GBPJPY_1(), this.greeting_GBPJPY_2(), this.greeting_GBPJPY_3(), this.greeting_GBPJPY_4()),
+                    "photo_count": 5,
                 }),
                 "NZDUSD": ({
                     "name": "NZD / USD",
-                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
-                    "photo_count": 4,
+                    "greeting": [].concat(this.greeting_NZDUSD_0(), this.greeting_NZDUSD_1(), this.greeting_NZDUSD_2()),
+                    "photo_count": 3,
                 }),
                 "USDCAD": ({
                     "name": "USD / CAD",
-                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
-                    "photo_count": 4,
-                }),
-                "USDCHF": ({
-                    "name": "USD / CHF",
-                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
-                    "photo_count": 4,
+                    "greeting": [].concat(this.greeting_USDCAD_0(), this.greeting_USDCAD_1(), this.greeting_USDCAD_2(), this.greeting_USDCAD_3(), this.greeting_USDCAD_4(), this.greeting_USDCAD_5()),
+                    "photo_count": 6,
                 }),
                 "USDJPY": ({
                     "name": "USD / JPY",
-                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
-                    "photo_count": 4,
-                }),
-                "USDRUB": ({
-                    "name": "USD / RUB",
-                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
-                    "photo_count": 4,
-                }),
-                "XAGUSD": ({
-                    "name": "XAG / USD",
-                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
-                    "photo_count": 4,
+                    "greeting": [].concat(this.greeting_USDJPY_0(), this.greeting_USDJPY_1(), this.greeting_USDJPY_2(), this.greeting_USDJPY_3(), this.greeting_USDJPY_4()),
+                    "photo_count": 5,
                 }),
             });
         };
