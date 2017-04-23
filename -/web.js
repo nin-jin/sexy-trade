@@ -6070,7 +6070,7 @@ var $;
             return this.name();
         };
         $my_option_room.prototype.frequency = function () {
-            return 0.5;
+            return 1;
         };
         $my_option_room.prototype.photos = function () {
             return [];
