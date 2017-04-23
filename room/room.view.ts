@@ -43,32 +43,35 @@ namespace $.$mol {
 		}
 
 		bid( what : boolean ) {
-			const start = this.start( this.series()[ this.series().length - 1 ] )
-			
-			this.bid_enabled( false )
-			this.message( this.message_wait() )
-			
-			setTimeout( ()=> {
-				this.bid_enabled( true )
-				this.start( 0 )
+			$mol_atom_task( 'bid_1' , ()=> {
+				const start = this.start( this.series()[ this.series().length - 1 ] )
 				
-				$mol_atom_task( 'bid' , ()=> {
-					if( ( this.end() > start ) === what ) {
+				this.bid_enabled( false )
+				this.message( this.message_wait() )
+				
+				setTimeout( ()=> {
+					this.bid_enabled( true )
+					this.start( 0 )
 					
-						this.ballance( Math.floor( this.ballance() * 1.1 ) )
-						this.level( Math.min( this.level() + 1 , this.photo_count() - 1 ) )
-						this.message( undefined , $mol_atom_force )
-					
-					} else {
-					
-						this.ballance( Math.floor( this.ballance() * 0.9 ) )
-						this.level( 0 )
-						this.message( this.message_fail() )
-					
-					}
-				} )
+					$mol_atom_task( 'bid_2' , ()=> {
+						if( ( this.end() > start ) === what ) {
+						
+							this.ballance( Math.floor( this.ballance() * 1.1 ) )
+							this.level( Math.min( this.level() + 1 , this.photo_count() - 1 ) )
+							this.message( undefined , $mol_atom_force )
+						
+						} else {
+						
+							this.ballance( Math.floor( this.ballance() * 0.9 ) )
+							this.level( 0 )
+							this.message( this.message_fail() )
+						
+						}
+					} )
 
-			} , 5000 )
+				} , 5000 )
+				
+			} )
 		}
 
 		demo() {
@@ -96,7 +99,7 @@ namespace $.$mol {
 				}
 				return res
 			} else {
-				return $mol_http_resource_json.item<number[]>( `//api.sexy-trade.hyoo.ru/${ this.id() }?${ seed }` ).json()
+				return $mol_http_resource_json.item<number[]>( `http://api.sexy-trade.hyoo.ru/${ this.id() }?${ seed }` ).json()
 			}
 		}
 

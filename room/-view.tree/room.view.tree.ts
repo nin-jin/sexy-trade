@@ -32,9 +32,9 @@ namespace $ { export class $my_option_room extends $mol_page {
 		return this.name()
 	}
 
-	/// frequency 1
+	/// frequency 0.5
 	frequency() {
-		return 1
+		return 0.5
 	}
 
 	/// photos /

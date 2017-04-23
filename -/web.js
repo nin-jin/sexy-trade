@@ -6070,7 +6070,7 @@ var $;
             return this.name();
         };
         $my_option_room.prototype.frequency = function () {
-            return 1;
+            return 0.5;
         };
         $my_option_room.prototype.photos = function () {
             return [];
@@ -6372,25 +6372,27 @@ var $;
             };
             $my_option_room.prototype.bid = function (what) {
                 var _this = this;
-                var start = this.start(this.series()[this.series().length - 1]);
-                this.bid_enabled(false);
-                this.message(this.message_wait());
-                setTimeout(function () {
-                    _this.bid_enabled(true);
-                    _this.start(0);
-                    $.$mol_atom_task('bid', function () {
-                        if ((_this.end() > start) === what) {
-                            _this.ballance(Math.floor(_this.ballance() * 1.1));
-                            _this.level(Math.min(_this.level() + 1, _this.photo_count() - 1));
-                            _this.message(undefined, $.$mol_atom_force);
-                        }
-                        else {
-                            _this.ballance(Math.floor(_this.ballance() * 0.9));
-                            _this.level(0);
-                            _this.message(_this.message_fail());
-                        }
-                    });
-                }, 5000);
+                $.$mol_atom_task('bid_1', function () {
+                    var start = _this.start(_this.series()[_this.series().length - 1]);
+                    _this.bid_enabled(false);
+                    _this.message(_this.message_wait());
+                    setTimeout(function () {
+                        _this.bid_enabled(true);
+                        _this.start(0);
+                        $.$mol_atom_task('bid_2', function () {
+                            if ((_this.end() > start) === what) {
+                                _this.ballance(Math.floor(_this.ballance() * 1.1));
+                                _this.level(Math.min(_this.level() + 1, _this.photo_count() - 1));
+                                _this.message(undefined, $.$mol_atom_force);
+                            }
+                            else {
+                                _this.ballance(Math.floor(_this.ballance() * 0.9));
+                                _this.level(0);
+                                _this.message(_this.message_fail());
+                            }
+                        });
+                    }, 5000);
+                });
             };
             $my_option_room.prototype.demo = function () {
                 return $.$mol_state_arg.value('demo') != null;
@@ -6415,7 +6417,7 @@ var $;
                     return res;
                 }
                 else {
-                    return $.$mol_http_resource_json.item("//api.sexy-trade.hyoo.ru/" + this.id() + "?" + seed).json();
+                    return $.$mol_http_resource_json.item("http://api.sexy-trade.hyoo.ru/" + this.id() + "?" + seed).json();
                 }
             };
             $my_option_room.prototype.tools = function () {

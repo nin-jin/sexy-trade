@@ -6,7 +6,7 @@ $my_option_room $mol_page
 		greeting /
 		photo_count 0
 	title <= name \
-	frequency 1
+	frequency 0.5
 	photos /
 	message_fail @ \With men it happens.. Not often, one time out of five. Let's try again?
 	message_wait @ \Interesting..
