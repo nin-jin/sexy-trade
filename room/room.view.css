@@ -28,7 +28,7 @@
 
 [my_option_room_history] {
 	background: var(--mol_skin_light);
-	flex: 1 0 20vh;
+	flex: .5 0 20vh;
 }
 
 [my_option_room_actions] {
