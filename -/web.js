@@ -6268,7 +6268,7 @@ var $;
                 return _super !== null && _super.apply(this, arguments) || this;
             }
             $my_option_room.prototype.photo = function () {
-                return this.data().photos[this.level()];
+                return $.$mol_file.relative(this.data().photos[this.level()]).path();
             };
             $my_option_room.prototype.photo_style = function () {
                 return "url( \"" + this.photo() + "\" )";
@@ -6638,7 +6638,7 @@ var $;
                 return Object.keys(this.rooms_data()).map(function (id) { return _this.Room(id); });
             };
             $my_option_rooms.prototype.room_avatar = function (id) {
-                return this.rooms_data()[id].avatar;
+                return $.$mol_file.relative(this.rooms_data()[id].avatar).path();
             };
             $my_option_rooms.prototype.room_name = function (id) {
                 return this.rooms_data()[id].name;

@@ -2,7 +2,7 @@ namespace $.$mol {
 	export class $my_option_room extends $.$my_option_room {
 		
 		photo() {
-			return this.data().photos[ this.level() ]
+			return $mol_file.relative( this.data().photos[ this.level() ] ).path()
 		}
 
 		photo_style() {
