@@ -53,6 +53,11 @@
 	padding: 1rem;
 }
 
+[my_option_room_bid_dec][disabled] ,
+[my_option_room_bid_inc][disabled] {
+	background: var(--mol_skin_passive);
+}
+
 [my_option_room_message] {
 	margin: 1rem 1rem;
 	padding: 0 1rem;

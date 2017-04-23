@@ -1,6 +1,6 @@
 namespace $ { export class $my_option extends $mol_book {
 
-	/// placeholder_title @ \Они научит тебя зарабатывать!
+	/// placeholder_title @ \They will teach you to earn!
 	placeholder_title() {
 		return $mol_locale.text( this.locale_contexts() , "placeholder_title" )
 	}
@@ -59,29 +59,29 @@ namespace $ { export class $my_option extends $mol_book {
 		return [].concat( this.Placeholder() , this.Rooms() , this.Room() )
 	}
 
-	/// greeting_0 @ \Привет, меня зовут Катя. Ставишь на рост или понижение?
+	/// greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
 	greeting_0() {
 		return $mol_locale.text( this.locale_contexts() , "greeting_0" )
 	}
 
-	/// greeting_1 @ \Угадал, держи свою награду)
+	/// greeting_1 @ \Guessed, here your reward)
 	greeting_1() {
 		return $mol_locale.text( this.locale_contexts() , "greeting_1" )
 	}
 
-	/// greeting_2 @ \Ты меня смущаешь..
+	/// greeting_2 @ \You're embarrassing me..
 	greeting_2() {
 		return $mol_locale.text( this.locale_contexts() , "greeting_2" )
 	}
 
-	/// greeting_3 @ \Ты просто мастер! Продолжим в [реальной игре](https://iqoption.com/)?
+	/// greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
 	greeting_3() {
 		return $mol_locale.text( this.locale_contexts() , "greeting_3" )
 	}
 
 	/// rooms_data * 
 	/// 	EUR-RUR * 
-	/// 		name \Евро - Рубль
+	/// 		name \EUR / RUR
 	/// 		greeting / 
 	/// 			<= greeting_0 
 	/// 			<= greeting_1 
@@ -94,7 +94,7 @@ namespace $ { export class $my_option extends $mol_book {
 	/// 			\/my/option/image/EUR/3.jpg
 	/// 			\/my/option/image/EUR/4.jpg
 	/// 	USD-RUR * 
-	/// 		name \Доллар - Рубль
+	/// 		name \USD / RUR
 	/// 		greeting / 
 	/// 			<= greeting_0 
 	/// 			<= greeting_1 
@@ -109,13 +109,13 @@ namespace $ { export class $my_option extends $mol_book {
 	rooms_data() {
 		return ({
 			"EUR-RUR" :  ({
-			"name" :  "Евро - Рубль" ,
+			"name" :  "EUR / RUR" ,
 			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
 			"avatar" :  "/my/option/image/EUR/avatar.jpg" ,
 			"photos" :  [].concat( "/my/option/image/EUR/1.jpg" , "/my/option/image/EUR/2.jpg" , "/my/option/image/EUR/3.jpg" , "/my/option/image/EUR/4.jpg" ) ,
 		}) ,
 			"USD-RUR" :  ({
-			"name" :  "Доллар - Рубль" ,
+			"name" :  "USD / RUR" ,
 			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
 			"avatar" :  "/my/option/image/EUR/avatar.jpg" ,
 			"photos" :  [].concat( "/my/option/image/EUR/1.jpg" , "/my/option/image/EUR/2.jpg" , "/my/option/image/EUR/3.jpg" , "/my/option/image/EUR/4.jpg" ) ,

@@ -5,6 +5,7 @@
 	--mol_skin_light_line: rgba( 50 , 50 , 50 , .75 );
 	--mol_skin_light_text: rgba( 200 , 200 , 250 , 1 );
 	--mol_skin_hover: none;
+	--mol_skin_passive: rgba( 0 , 0 , 0 , .5 );
 }
 
 [mol_text_type="text-link"] {

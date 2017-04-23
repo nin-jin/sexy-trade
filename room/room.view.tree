@@ -9,7 +9,7 @@ $my_option_room $mol_page
 	title <= name \
 	frequency 1
 	photos /
-	message_fail @ \С мужиками такое случается.. Не частно, один разок из пяти. Давай попробуем снова?
+	message_fail @ \With men it happens.. Not often, one time out of five. Let's try again?
 	message_wait @ \Интрига..
 	level?val 0
 	tools /
@@ -29,7 +29,7 @@ $my_option_room $mol_page
 					my_option_room_difference_good <= good true
 				sub /
 					<= difference \+0
-			\)
+			\%)
 	body /
 		<= Game $mol_view
 			sub /
@@ -47,11 +47,13 @@ $my_option_room $mol_page
 				<= Actions $mol_row
 					sub /
 						<= Bid_inc $mol_button
-							title <= buy_title @ \Рост
+							title <= buy_title @ \Call
 							event_click?val <=> event_up?val null
+							enabled <= bid_enabled?val true
 						<= Bid_dec $mol_button
-							title <= sell_title @ \Снижение
+							title <= sell_title @ \Put
 							event_click?val <=> event_down?val null
+							enabled <= bid_enabled?val true
 				<= Message $mol_text
 					text <= message?val <= greeting \
 		<= Photo $mol_view

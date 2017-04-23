@@ -1,7 +1,7 @@
 $my_option $mol_book
 	pages /
 		<= Placeholder $mol_book_placeholder
-			title <= placeholder_title @ \Они научит тебя зарабатывать!
+			title <= placeholder_title @ \They will teach you to earn!
 		<= Rooms $my_option_rooms
 			rooms_data <= rooms_data -
 		<= Room $my_option_room
@@ -14,12 +14,12 @@ $my_option $mol_book
 	-
 	rooms_data *
 		EUR-RUR *
-			name \Евро - Рубль
+			name \EUR / RUR
 			greeting /
-				<= greeting_0 @ \Привет, меня зовут Катя. Ставишь на рост или понижение?
-				<= greeting_1 @ \Угадал, держи свою награду)
-				<= greeting_2 @ \Ты меня смущаешь..
-				<= greeting_3 @ \Ты просто мастер! Продолжим в [реальной игре](https://iqoption.com/)?
+				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
+				<= greeting_1 @ \Guessed, here your reward)
+				<= greeting_2 @ \You're embarrassing me..
+				<= greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
 			avatar \/my/option/image/EUR/avatar.jpg
 			photos /
 				\/my/option/image/EUR/1.jpg
@@ -27,12 +27,12 @@ $my_option $mol_book
 				\/my/option/image/EUR/3.jpg
 				\/my/option/image/EUR/4.jpg
 		USD-RUR *
-			name \Доллар - Рубль
+			name \USD / RUR
 			greeting /
-				<= greeting_0 @ \Привет, меня зовут Катя. Ставишь на рост или понижение?
-				<= greeting_1 @ \Угадал, держи свою награду)
-				<= greeting_2 @ \Ты меня смущаешь..
-				<= greeting_3 @ \Ты просто мастер! Продолжим в [реальной игре](https://iqoption.com/)?
+				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
+				<= greeting_1 @ \Guessed, here your reward)
+				<= greeting_2 @ \You're embarrassing me..
+				<= greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
 			avatar \/my/option/image/EUR/avatar.jpg
 			photos /
 				\/my/option/image/EUR/1.jpg

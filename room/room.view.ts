@@ -36,17 +36,26 @@ namespace $.$mol {
 
 		bid( what : boolean ) {
 			const start = this.series()[ this.series().length - 1 ]
+			
+			this.bid_enabled( false )
 			this.message( this.message_wait() )
+			
 			setTimeout( ()=> {
+				this.bid_enabled( true )
+				
 				const end = this.series()[ this.series().length - 1 ]
 				if( ( end > start ) === what ) {
+				
 					this.ballance( Math.floor( this.ballance() * 1.1 ) )
 					this.level( Math.min( this.level() + 1 , this.data().photos.length - 1 ) )
 					this.message( undefined , $mol_atom_force )
+				
 				} else {
+				
 					this.ballance( Math.floor( this.ballance() * 0.9 ) )
 					this.level( 0 )
 					this.message( this.message_fail() )
+				
 				}
 			} , 1000 )
 		}

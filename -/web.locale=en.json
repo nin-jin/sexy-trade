@@ -1,12 +1,12 @@
 {
-	"$my_option_room_message_fail": "С мужиками такое случается.. Не частно, один разок из пяти. Давай попробуем снова?",
+	"$my_option_room_message_fail": "With men it happens.. Not often, one time out of five. Let's try again?",
 	"$my_option_room_message_wait": "Интрига..",
-	"$my_option_room_buy_title": "Рост",
-	"$my_option_room_sell_title": "Снижение",
-	"$my_option_placeholder_title": "Они научит тебя зарабатывать!",
-	"$my_option_greeting_0": "Привет, меня зовут Катя. Ставишь на рост или понижение?",
-	"$my_option_greeting_1": "Угадал, держи свою награду)",
-	"$my_option_greeting_2": "Ты меня смущаешь..",
-	"$my_option_greeting_3": "Ты просто мастер! Продолжим в [реальной игре](https://iqoption.com/)?",
-	"$my_option_rooms_title": "Секси трейдинг"
+	"$my_option_room_buy_title": "Call",
+	"$my_option_room_sell_title": "Put",
+	"$my_option_placeholder_title": "They will teach you to earn!",
+	"$my_option_greeting_0": "Hi, my name is Kate. Do you bid on call or put?",
+	"$my_option_greeting_1": "Guessed, here your reward)",
+	"$my_option_greeting_2": "You're embarrassing me..",
+	"$my_option_greeting_3": "You are awesome! Continue in [the real game](https://iqoption.com/)?",
+	"$my_option_rooms_title": "Sexy trading"
 }

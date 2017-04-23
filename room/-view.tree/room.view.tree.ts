@@ -44,7 +44,7 @@ namespace $ { export class $my_option_room extends $mol_page {
 		return [] as any[]
 	}
 
-	/// message_fail @ \С мужиками такое случается.. Не частно, один разок из пяти. Давай попробуем снова?
+	/// message_fail @ \With men it happens.. Not often, one time out of five. Let's try again?
 	message_fail() {
 		return $mol_locale.text( this.locale_contexts() , "message_fail" )
 	}
@@ -130,11 +130,11 @@ namespace $ { export class $my_option_room extends $mol_page {
 	/// 	<= Ballance 
 	/// 	\ (
 	/// 	<= Difference 
-	/// 	\)
+	/// 	\%)
 	@ $mol_mem_key()
 	Score( id : any ) {
 		return new $mol_view().setup( obj => { 
-			obj.sub = () => [].concat( this.Ballance() , " (" , this.Difference() , ")" )
+			obj.sub = () => [].concat( this.Ballance() , " (" , this.Difference() , "%)" )
 		} )
 	}
 
@@ -182,7 +182,7 @@ namespace $ { export class $my_option_room extends $mol_page {
 		} )
 	}
 
-	/// buy_title @ \Рост
+	/// buy_title @ \Call
 	buy_title() {
 		return $mol_locale.text( this.locale_contexts() , "buy_title" )
 	}
@@ -193,18 +193,26 @@ namespace $ { export class $my_option_room extends $mol_page {
 		return ( val !== void 0 ) ? val : <any> null
 	}
 
+	/// bid_enabled?val true
+	@ $mol_mem()
+	bid_enabled( val? : any , force? : $mol_atom_force ) {
+		return ( val !== void 0 ) ? val : true
+	}
+
 	/// Bid_inc $mol_button 
 	/// 	title <= buy_title 
-	/// 	event_click?val <=> event_up?val
+	/// 	event_click?val <=> event_up?val 
+	/// 	enabled <= bid_enabled?val
 	@ $mol_mem()
 	Bid_inc() {
 		return new $mol_button().setup( obj => { 
 			obj.title = () => this.buy_title()
 			obj.event_click = ( val? : any ) => this.event_up( val )
+			obj.enabled = () => this.bid_enabled()
 		} )
 	}
 
-	/// sell_title @ \Снижение
+	/// sell_title @ \Put
 	sell_title() {
 		return $mol_locale.text( this.locale_contexts() , "sell_title" )
 	}
@@ -217,12 +225,14 @@ namespace $ { export class $my_option_room extends $mol_page {
 
 	/// Bid_dec $mol_button 
 	/// 	title <= sell_title 
-	/// 	event_click?val <=> event_down?val
+	/// 	event_click?val <=> event_down?val 
+	/// 	enabled <= bid_enabled?val
 	@ $mol_mem()
 	Bid_dec() {
 		return new $mol_button().setup( obj => { 
 			obj.title = () => this.sell_title()
 			obj.event_click = ( val? : any ) => this.event_down( val )
+			obj.enabled = () => this.bid_enabled()
 		} )
 	}
 

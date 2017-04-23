@@ -1,7 +1,7 @@
 {
-	"$my_option_placeholder_title": "Они научит тебя зарабатывать!",
-	"$my_option_greeting_0": "Привет, меня зовут Катя. Ставишь на рост или понижение?",
-	"$my_option_greeting_1": "Угадал, держи свою награду)",
-	"$my_option_greeting_2": "Ты меня смущаешь..",
-	"$my_option_greeting_3": "Ты просто мастер! Продолжим в [реальной игре](https://iqoption.com/)?"
+	"$my_option_placeholder_title": "They will teach you to earn!",
+	"$my_option_greeting_0": "Hi, my name is Kate. Do you bid on call or put?",
+	"$my_option_greeting_1": "Guessed, here your reward)",
+	"$my_option_greeting_2": "You're embarrassing me..",
+	"$my_option_greeting_3": "You are awesome! Continue in [the real game](https://iqoption.com/)?"
 }

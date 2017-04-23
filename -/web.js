@@ -6086,7 +6086,7 @@ var $;
         $my_option_room.prototype.Score = function (id) {
             var _this = this;
             return new $.$mol_view().setup(function (obj) {
-                obj.sub = function () { return [].concat(_this.Ballance(), " (", _this.Difference(), ")"); };
+                obj.sub = function () { return [].concat(_this.Ballance(), " (", _this.Difference(), "%)"); };
             });
         };
         $my_option_room.prototype.Graph_line = function () {
@@ -6118,11 +6118,15 @@ var $;
         $my_option_room.prototype.event_up = function (val, force) {
             return (val !== void 0) ? val : null;
         };
+        $my_option_room.prototype.bid_enabled = function (val, force) {
+            return (val !== void 0) ? val : true;
+        };
         $my_option_room.prototype.Bid_inc = function () {
             var _this = this;
             return new $.$mol_button().setup(function (obj) {
                 obj.title = function () { return _this.buy_title(); };
                 obj.event_click = function (val) { return _this.event_up(val); };
+                obj.enabled = function () { return _this.bid_enabled(); };
             });
         };
         $my_option_room.prototype.sell_title = function () {
@@ -6136,6 +6140,7 @@ var $;
             return new $.$mol_button().setup(function (obj) {
                 obj.title = function () { return _this.sell_title(); };
                 obj.event_click = function (val) { return _this.event_down(val); };
+                obj.enabled = function () { return _this.bid_enabled(); };
             });
         };
         $my_option_room.prototype.Actions = function () {
@@ -6214,6 +6219,9 @@ var $;
     __decorate([
         $.$mol_mem()
     ], $my_option_room.prototype, "event_up", null);
+    __decorate([
+        $.$mol_mem()
+    ], $my_option_room.prototype, "bid_enabled", null);
     __decorate([
         $.$mol_mem()
     ], $my_option_room.prototype, "Bid_inc", null);
@@ -6295,8 +6303,10 @@ var $;
             $my_option_room.prototype.bid = function (what) {
                 var _this = this;
                 var start = this.series()[this.series().length - 1];
+                this.bid_enabled(false);
                 this.message(this.message_wait());
                 setTimeout(function () {
+                    _this.bid_enabled(true);
                     var end = _this.series()[_this.series().length - 1];
                     if ((end > start) === what) {
                         _this.ballance(Math.floor(_this.ballance() * 1.1));
@@ -6408,13 +6418,13 @@ var $;
         $my_option.prototype.rooms_data = function () {
             return ({
                 "EUR-RUR": ({
-                    "name": "Евро - Рубль",
+                    "name": "EUR / RUR",
                     "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
                     "avatar": "/my/option/image/EUR/avatar.jpg",
                     "photos": [].concat("/my/option/image/EUR/1.jpg", "/my/option/image/EUR/2.jpg", "/my/option/image/EUR/3.jpg", "/my/option/image/EUR/4.jpg"),
                 }),
                 "USD-RUR": ({
-                    "name": "Доллар - Рубль",
+                    "name": "USD / RUR",
                     "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
                     "avatar": "/my/option/image/EUR/avatar.jpg",
                     "photos": [].concat("/my/option/image/EUR/1.jpg", "/my/option/image/EUR/2.jpg", "/my/option/image/EUR/3.jpg", "/my/option/image/EUR/4.jpg"),

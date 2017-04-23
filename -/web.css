@@ -182,7 +182,7 @@
     flex: 0 0 auto
 }
 [mol_check][disabled] > [mol_check_box_icon] {
-    background-color: #eee
+    background-color: rgba(0, 0, 0, .5)
 }
 [mol_check_box_icon] {
     left: 0;
@@ -574,6 +574,10 @@
     background: #96DAA9;
     color: black;
     padding: 1rem
+}
+[my_option_room_bid_dec][disabled] ,
+[my_option_room_bid_inc][disabled] {
+    background: rgba(0, 0, 0, .5)
 }
 [my_option_room_message] {
     margin: 1rem 1rem;
