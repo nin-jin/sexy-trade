@@ -9,33 +9,70 @@ $my_option $mol_book
 			data <= selected_data *
 				name \
 				greeting /
-				avatar \
-				photos /
+				photo_count 0
 	-
 	rooms_data *
-		EUR-RUR *
-			name \EUR / RUR
+		GBPCHF *
+			name \GBP / CHF
 			greeting /
 				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
 				<= greeting_1 @ \Guessed, here your reward)
 				<= greeting_2 @ \You're embarrassing me..
 				<= greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
-			avatar \/my/option/image/EUR/avatar.jpg
-			photos /
-				\/my/option/image/EUR/1.jpg
-				\/my/option/image/EUR/2.jpg
-				\/my/option/image/EUR/3.jpg
-				\/my/option/image/EUR/4.jpg
-		USD-RUR *
-			name \USD / RUR
+			photo_count 4
+		GBPJPY *
+			name \GBP / JPY
 			greeting /
 				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
 				<= greeting_1 @ \Guessed, here your reward)
 				<= greeting_2 @ \You're embarrassing me..
 				<= greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
-			avatar \/my/option/image/EUR/avatar.jpg
-			photos /
-				\/my/option/image/EUR/1.jpg
-				\/my/option/image/EUR/2.jpg
-				\/my/option/image/EUR/3.jpg
-				\/my/option/image/EUR/4.jpg
+			photo_count 4
+		NZDUSD *
+			name \NZD / USD
+			greeting /
+				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
+				<= greeting_1 @ \Guessed, here your reward)
+				<= greeting_2 @ \You're embarrassing me..
+				<= greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
+			photo_count 4
+		USDCAD *
+			name \USD / CAD
+			greeting /
+				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
+				<= greeting_1 @ \Guessed, here your reward)
+				<= greeting_2 @ \You're embarrassing me..
+				<= greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
+			photo_count 4
+		USDCHF *
+			name \USD / CHF
+			greeting /
+				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
+				<= greeting_1 @ \Guessed, here your reward)
+				<= greeting_2 @ \You're embarrassing me..
+				<= greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
+			photo_count 4
+		USDJPY *
+			name \USD / JPY
+			greeting /
+				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
+				<= greeting_1 @ \Guessed, here your reward)
+				<= greeting_2 @ \You're embarrassing me..
+				<= greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
+			photo_count 4
+		USDRUB *
+			name \USD / RUB
+			greeting /
+				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
+				<= greeting_1 @ \Guessed, here your reward)
+				<= greeting_2 @ \You're embarrassing me..
+				<= greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
+			photo_count 4
+		XAGUSD *
+			name \XAG / USD
+			greeting /
+				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
+				<= greeting_1 @ \Guessed, here your reward)
+				<= greeting_2 @ \You're embarrassing me..
+				<= greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
+			photo_count 4

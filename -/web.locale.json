@@ -1,6 +1,6 @@
 {
 	"$my_option_room_message_fail": "With men it happens.. Not often, one time out of five. Let's try again?",
-	"$my_option_room_message_wait": "Интрига..",
+	"$my_option_room_message_wait": "Interesting..",
 	"$my_option_room_buy_title": "Call",
 	"$my_option_room_sell_title": "Put",
 	"$my_option_placeholder_title": "They will teach you to earn!",
@@ -8,5 +8,5 @@
 	"$my_option_greeting_1": "Guessed, here your reward)",
 	"$my_option_greeting_2": "You're embarrassing me..",
 	"$my_option_greeting_3": "You are awesome! Continue in [the real game](https://iqoption.com/)?",
-	"$my_option_rooms_title": "Sexy trading"
+	"$my_option_rooms_title": "Sexy trade"
 }

@@ -553,9 +553,8 @@
     flex-direction: column
 }
 [my_option_room_history] {
-    height: 20vh;
     background: #161B28;
-    flex: 0 0 auto
+    flex: 1 0 20vh
 }
 [my_option_room_actions] {
     flex-direction: column;

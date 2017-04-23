@@ -13,14 +13,12 @@ namespace $ { export class $my_option_room extends $mol_page {
 	/// data * 
 	/// 	name \
 	/// 	greeting / 
-	/// 	avatar \
-	/// 	photos /
+	/// 	photo_count 0
 	data() {
 		return ({
 			"name" :  "" ,
 			"greeting" :  [] as any[] ,
-			"avatar" :  "" ,
-			"photos" :  [] as any[] ,
+			"photo_count" :  0 ,
 		})
 	}
 
@@ -34,9 +32,9 @@ namespace $ { export class $my_option_room extends $mol_page {
 		return this.name()
 	}
 
-	/// frequency 1
+	/// frequency 0.5
 	frequency() {
-		return 1
+		return 0.5
 	}
 
 	/// photos /
@@ -49,7 +47,7 @@ namespace $ { export class $my_option_room extends $mol_page {
 		return $mol_locale.text( this.locale_contexts() , "message_fail" )
 	}
 
-	/// message_wait @ \Интрига..
+	/// message_wait @ \Interesting..
 	message_wait() {
 		return $mol_locale.text( this.locale_contexts() , "message_wait" )
 	}
@@ -57,6 +55,12 @@ namespace $ { export class $my_option_room extends $mol_page {
 	/// level?val 0
 	@ $mol_mem()
 	level( val? : any , force? : $mol_atom_force ) {
+		return ( val !== void 0 ) ? val : 0
+	}
+
+	/// start?val 0
+	@ $mol_mem()
+	start( val? : any , force? : $mol_atom_force ) {
 		return ( val !== void 0 ) ? val : 0
 	}
 
@@ -168,17 +172,35 @@ namespace $ { export class $my_option_room extends $mol_page {
 		} )
 	}
 
+	/// series_start /
+	series_start() {
+		return [] as any[]
+	}
+
+	/// Start $mol_plot_line series <= series_start
+	@ $mol_mem()
+	Start() {
+		return new $mol_plot_line().setup( obj => { 
+			obj.series = () => this.series_start()
+		} )
+	}
+
+	/// graphs / 
+	/// 	<= Graph 
+	/// 	<= Start
+	graphs() {
+		return [].concat( this.Graph() , this.Start() )
+	}
+
 	/// History $mol_plot_pane 
 	/// 	hue_base 170 
 	/// 	- Legend null 
-	/// 	graphs / 
-	/// 		- <= Ruler_vert 
-	/// 		<= Graph
+	/// 	graphs <= graphs
 	@ $mol_mem()
 	History() {
 		return new $mol_plot_pane().setup( obj => { 
 			obj.hue_base = () => 170
-			obj.graphs = () => [].concat( this.Graph() )
+			obj.graphs = () => this.graphs()
 		} )
 	}
 

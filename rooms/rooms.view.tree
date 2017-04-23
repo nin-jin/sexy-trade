@@ -1,6 +1,6 @@
 $my_option_rooms $mol_page
 	minimal_width 400
-	title @ \Sexy trading
+	title @ \Sexy trade
 	body /
 		<= Rooms $mol_list
 			rows <= rooms /

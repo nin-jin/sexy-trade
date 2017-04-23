@@ -29,14 +29,12 @@ namespace $ { export class $my_option extends $mol_book {
 	/// selected_data * 
 	/// 	name \
 	/// 	greeting / 
-	/// 	avatar \
-	/// 	photos /
+	/// 	photo_count 0
 	selected_data() {
 		return ({
 			"name" :  "" ,
 			"greeting" :  [] as any[] ,
-			"avatar" :  "" ,
-			"photos" :  [] as any[] ,
+			"photo_count" :  0 ,
 		})
 	}
 
@@ -80,45 +78,111 @@ namespace $ { export class $my_option extends $mol_book {
 	}
 
 	/// rooms_data * 
-	/// 	EUR-RUR * 
-	/// 		name \EUR / RUR
+	/// 	GBPCHF * 
+	/// 		name \GBP / CHF
 	/// 		greeting / 
 	/// 			<= greeting_0 
 	/// 			<= greeting_1 
 	/// 			<= greeting_2 
 	/// 			<= greeting_3 
-	/// 		avatar \/my/option/image/EUR/avatar.jpg
-	/// 		photos / 
-	/// 			\/my/option/image/EUR/1.jpg
-	/// 			\/my/option/image/EUR/2.jpg
-	/// 			\/my/option/image/EUR/3.jpg
-	/// 			\/my/option/image/EUR/4.jpg
-	/// 	USD-RUR * 
-	/// 		name \USD / RUR
+	/// 		photo_count 4 
+	/// 	GBPJPY * 
+	/// 		name \GBP / JPY
 	/// 		greeting / 
 	/// 			<= greeting_0 
 	/// 			<= greeting_1 
 	/// 			<= greeting_2 
 	/// 			<= greeting_3 
-	/// 		avatar \/my/option/image/EUR/avatar.jpg
-	/// 		photos / 
-	/// 			\/my/option/image/EUR/1.jpg
-	/// 			\/my/option/image/EUR/2.jpg
-	/// 			\/my/option/image/EUR/3.jpg
-	/// 			\/my/option/image/EUR/4.jpg
+	/// 		photo_count 4 
+	/// 	NZDUSD * 
+	/// 		name \NZD / USD
+	/// 		greeting / 
+	/// 			<= greeting_0 
+	/// 			<= greeting_1 
+	/// 			<= greeting_2 
+	/// 			<= greeting_3 
+	/// 		photo_count 4 
+	/// 	USDCAD * 
+	/// 		name \USD / CAD
+	/// 		greeting / 
+	/// 			<= greeting_0 
+	/// 			<= greeting_1 
+	/// 			<= greeting_2 
+	/// 			<= greeting_3 
+	/// 		photo_count 4 
+	/// 	USDCHF * 
+	/// 		name \USD / CHF
+	/// 		greeting / 
+	/// 			<= greeting_0 
+	/// 			<= greeting_1 
+	/// 			<= greeting_2 
+	/// 			<= greeting_3 
+	/// 		photo_count 4 
+	/// 	USDJPY * 
+	/// 		name \USD / JPY
+	/// 		greeting / 
+	/// 			<= greeting_0 
+	/// 			<= greeting_1 
+	/// 			<= greeting_2 
+	/// 			<= greeting_3 
+	/// 		photo_count 4 
+	/// 	USDRUB * 
+	/// 		name \USD / RUB
+	/// 		greeting / 
+	/// 			<= greeting_0 
+	/// 			<= greeting_1 
+	/// 			<= greeting_2 
+	/// 			<= greeting_3 
+	/// 		photo_count 4 
+	/// 	XAGUSD * 
+	/// 		name \XAG / USD
+	/// 		greeting / 
+	/// 			<= greeting_0 
+	/// 			<= greeting_1 
+	/// 			<= greeting_2 
+	/// 			<= greeting_3 
+	/// 		photo_count 4
 	rooms_data() {
 		return ({
-			"EUR-RUR" :  ({
-			"name" :  "EUR / RUR" ,
+			"GBPCHF" :  ({
+			"name" :  "GBP / CHF" ,
 			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
-			"avatar" :  "/my/option/image/EUR/avatar.jpg" ,
-			"photos" :  [].concat( "/my/option/image/EUR/1.jpg" , "/my/option/image/EUR/2.jpg" , "/my/option/image/EUR/3.jpg" , "/my/option/image/EUR/4.jpg" ) ,
+			"photo_count" :  4 ,
 		}) ,
-			"USD-RUR" :  ({
-			"name" :  "USD / RUR" ,
+			"GBPJPY" :  ({
+			"name" :  "GBP / JPY" ,
 			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
-			"avatar" :  "/my/option/image/EUR/avatar.jpg" ,
-			"photos" :  [].concat( "/my/option/image/EUR/1.jpg" , "/my/option/image/EUR/2.jpg" , "/my/option/image/EUR/3.jpg" , "/my/option/image/EUR/4.jpg" ) ,
+			"photo_count" :  4 ,
+		}) ,
+			"NZDUSD" :  ({
+			"name" :  "NZD / USD" ,
+			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
+			"photo_count" :  4 ,
+		}) ,
+			"USDCAD" :  ({
+			"name" :  "USD / CAD" ,
+			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
+			"photo_count" :  4 ,
+		}) ,
+			"USDCHF" :  ({
+			"name" :  "USD / CHF" ,
+			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
+			"photo_count" :  4 ,
+		}) ,
+			"USDJPY" :  ({
+			"name" :  "USD / JPY" ,
+			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
+			"photo_count" :  4 ,
+		}) ,
+			"USDRUB" :  ({
+			"name" :  "USD / RUB" ,
+			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
+			"photo_count" :  4 ,
+		}) ,
+			"XAGUSD" :  ({
+			"name" :  "XAG / USD" ,
+			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
+			"photo_count" :  4 ,
 		}) ,
 		})
 	}

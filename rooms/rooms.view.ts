@@ -6,7 +6,7 @@ namespace $.$mol {
 		}
 
 		room_avatar( id : string ) {
-			return $mol_file.relative( this.rooms_data()[ id ].avatar ).path()
+			return $mol_file.relative( `/my/option/image/${ id }/avatar.jpg` ).path()
 		}
 		
 		room_name( id : string ) {

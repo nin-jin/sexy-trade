@@ -5,7 +5,7 @@ namespace $ { export class $my_option_rooms extends $mol_page {
 		return 400
 	}
 
-	/// title @ \Sexy trading
+	/// title @ \Sexy trade
 	title() {
 		return $mol_locale.text( this.locale_contexts() , "title" )
 	}

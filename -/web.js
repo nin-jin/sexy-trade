@@ -4915,7 +4915,8 @@ var $;
         };
         $mol_state_arg.value = function (key, next) {
             var nextDict = (next === void 0) ? void 0 : $.$mol_merge_dict(this.dict(), (_a = {}, _a[key] = next, _a));
-            return this.dict(nextDict)[key] || null;
+            var next2 = this.dict(nextDict)[key];
+            return (next2 == null) ? null : next2;
             var _a;
         };
         $mol_state_arg.link = function (next) {
@@ -6001,6 +6002,49 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var $;
 (function ($) {
+    var $mol_http_resource_json = (function (_super) {
+        __extends($mol_http_resource_json, _super);
+        function $mol_http_resource_json() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        $mol_http_resource_json.item = function (uri) {
+            return new $mol_http_resource_json().setup(function (obj) {
+                obj.uri = function () { return uri; };
+            });
+        };
+        $mol_http_resource_json.prototype.json = function (next, force) {
+            return JSON.parse(this.text(next && JSON.stringify(next, null, '\t'), force));
+        };
+        return $mol_http_resource_json;
+    }($.$mol_http_resource));
+    __decorate([
+        $.$mol_mem()
+    ], $mol_http_resource_json.prototype, "json", null);
+    __decorate([
+        $.$mol_mem_key()
+    ], $mol_http_resource_json, "item", null);
+    $.$mol_http_resource_json = $mol_http_resource_json;
+})($ || ($ = {}));
+//json.js.map
+;
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var $;
+(function ($) {
     var $my_option_room = (function (_super) {
         __extends($my_option_room, _super);
         function $my_option_room() {
@@ -6016,8 +6060,7 @@ var $;
             return ({
                 "name": "",
                 "greeting": [],
-                "avatar": "",
-                "photos": [],
+                "photo_count": 0,
             });
         };
         $my_option_room.prototype.name = function () {
@@ -6027,7 +6070,7 @@ var $;
             return this.name();
         };
         $my_option_room.prototype.frequency = function () {
-            return 1;
+            return 0.5;
         };
         $my_option_room.prototype.photos = function () {
             return [];
@@ -6039,6 +6082,9 @@ var $;
             return $.$mol_locale.text(this.locale_contexts(), "message_wait");
         };
         $my_option_room.prototype.level = function (val, force) {
+            return (val !== void 0) ? val : 0;
+        };
+        $my_option_room.prototype.start = function (val, force) {
             return (val !== void 0) ? val : 0;
         };
         $my_option_room.prototype.Close_icon = function () {
@@ -6105,11 +6151,23 @@ var $;
                 obj.series = function () { return _this.series(); };
             });
         };
+        $my_option_room.prototype.series_start = function () {
+            return [];
+        };
+        $my_option_room.prototype.Start = function () {
+            var _this = this;
+            return new $.$mol_plot_line().setup(function (obj) {
+                obj.series = function () { return _this.series_start(); };
+            });
+        };
+        $my_option_room.prototype.graphs = function () {
+            return [].concat(this.Graph(), this.Start());
+        };
         $my_option_room.prototype.History = function () {
             var _this = this;
             return new $.$mol_plot_pane().setup(function (obj) {
                 obj.hue_base = function () { return 170; };
-                obj.graphs = function () { return [].concat(_this.Graph()); };
+                obj.graphs = function () { return _this.graphs(); };
             });
         };
         $my_option_room.prototype.buy_title = function () {
@@ -6188,6 +6246,9 @@ var $;
     ], $my_option_room.prototype, "level", null);
     __decorate([
         $.$mol_mem()
+    ], $my_option_room.prototype, "start", null);
+    __decorate([
+        $.$mol_mem()
     ], $my_option_room.prototype, "Close_icon", null);
     __decorate([
         $.$mol_mem()
@@ -6213,6 +6274,9 @@ var $;
     __decorate([
         $.$mol_mem()
     ], $my_option_room.prototype, "Graph", null);
+    __decorate([
+        $.$mol_mem()
+    ], $my_option_room.prototype, "Start", null);
     __decorate([
         $.$mol_mem()
     ], $my_option_room.prototype, "History", null);
@@ -6275,8 +6339,11 @@ var $;
             function $my_option_room() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            $my_option_room.prototype.photo_count = function () {
+                return this.data().photo_count;
+            };
             $my_option_room.prototype.photo = function () {
-                return $.$mol_file.relative(this.data().photos[this.level()]).path();
+                return $.$mol_file.relative("/my/option/image/" + this.id() + "/" + this.level() + ".jpg").path();
             };
             $my_option_room.prototype.photo_style = function () {
                 return "url( \"" + this.photo() + "\" )";
@@ -6300,33 +6367,56 @@ var $;
             $my_option_room.prototype.good = function () {
                 return this.ballance() >= this.ballance_base();
             };
+            $my_option_room.prototype.end = function () {
+                return this.series()[this.series().length - 1];
+            };
             $my_option_room.prototype.bid = function (what) {
                 var _this = this;
-                var start = this.series()[this.series().length - 1];
+                var start = this.start(this.series()[this.series().length - 1]);
                 this.bid_enabled(false);
                 this.message(this.message_wait());
                 setTimeout(function () {
                     _this.bid_enabled(true);
-                    var end = _this.series()[_this.series().length - 1];
-                    if ((end > start) === what) {
-                        _this.ballance(Math.floor(_this.ballance() * 1.1));
-                        _this.level(Math.min(_this.level() + 1, _this.data().photos.length - 1));
-                        _this.message(undefined, $.$mol_atom_force);
-                    }
-                    else {
-                        _this.ballance(Math.floor(_this.ballance() * 0.9));
-                        _this.level(0);
-                        _this.message(_this.message_fail());
-                    }
-                }, 1000);
+                    _this.start(0);
+                    $.$mol_atom_task('bid', function () {
+                        if ((_this.end() > start) === what) {
+                            _this.ballance(Math.floor(_this.ballance() * 1.1));
+                            _this.level(Math.min(_this.level() + 1, _this.photo_count() - 1));
+                            _this.message(undefined, $.$mol_atom_force);
+                        }
+                        else {
+                            _this.ballance(Math.floor(_this.ballance() * 0.9));
+                            _this.level(0);
+                            _this.message(_this.message_fail());
+                        }
+                    });
+                }, 5000);
+            };
+            $my_option_room.prototype.demo = function () {
+                return $.$mol_state_arg.value('demo') != null;
+            };
+            $my_option_room.prototype.graphs = function () {
+                var next = [this.Graph()];
+                if (this.start())
+                    next.push(this.Start());
+                return next;
+            };
+            $my_option_room.prototype.series_start = function () {
+                var start = this.start();
+                return this.series().map(function (_) { return start; });
             };
             $my_option_room.prototype.series = function () {
-                var seed = $.$mol_state_time.now(1000 / this.frequency()) * this.frequency() / 1000;
-                var res = [];
-                for (var i = 0; i < 30; ++i) {
-                    res.push(Math.sin(seed + i) * 10 % 3);
+                var seed = Math.floor($.$mol_state_time.now(1000 / this.frequency()) * this.frequency() / 1000);
+                if (this.demo()) {
+                    var res = [];
+                    for (var i = 0; i < 30; ++i) {
+                        res.push(Math.sin(seed + i) * 10 % 3);
+                    }
+                    return res;
                 }
-                return res;
+                else {
+                    return $.$mol_http_resource_json.item("//api.sexy-trade.hyoo.ru/" + this.id() + "?" + seed).json();
+                }
             };
             $my_option_room.prototype.tools = function () {
                 return [
@@ -6389,8 +6479,7 @@ var $;
             return ({
                 "name": "",
                 "greeting": [],
-                "avatar": "",
-                "photos": [],
+                "photo_count": 0,
             });
         };
         $my_option.prototype.Room = function () {
@@ -6417,17 +6506,45 @@ var $;
         };
         $my_option.prototype.rooms_data = function () {
             return ({
-                "EUR-RUR": ({
-                    "name": "EUR / RUR",
+                "GBPCHF": ({
+                    "name": "GBP / CHF",
                     "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
-                    "avatar": "/my/option/image/EUR/avatar.jpg",
-                    "photos": [].concat("/my/option/image/EUR/1.jpg", "/my/option/image/EUR/2.jpg", "/my/option/image/EUR/3.jpg", "/my/option/image/EUR/4.jpg"),
+                    "photo_count": 4,
                 }),
-                "USD-RUR": ({
-                    "name": "USD / RUR",
+                "GBPJPY": ({
+                    "name": "GBP / JPY",
                     "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
-                    "avatar": "/my/option/image/EUR/avatar.jpg",
-                    "photos": [].concat("/my/option/image/EUR/1.jpg", "/my/option/image/EUR/2.jpg", "/my/option/image/EUR/3.jpg", "/my/option/image/EUR/4.jpg"),
+                    "photo_count": 4,
+                }),
+                "NZDUSD": ({
+                    "name": "NZD / USD",
+                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
+                    "photo_count": 4,
+                }),
+                "USDCAD": ({
+                    "name": "USD / CAD",
+                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
+                    "photo_count": 4,
+                }),
+                "USDCHF": ({
+                    "name": "USD / CHF",
+                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
+                    "photo_count": 4,
+                }),
+                "USDJPY": ({
+                    "name": "USD / JPY",
+                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
+                    "photo_count": 4,
+                }),
+                "USDRUB": ({
+                    "name": "USD / RUB",
+                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
+                    "photo_count": 4,
+                }),
+                "XAGUSD": ({
+                    "name": "XAG / USD",
+                    "greeting": [].concat(this.greeting_0(), this.greeting_1(), this.greeting_2(), this.greeting_3()),
+                    "photo_count": 4,
                 }),
             });
         };
@@ -6648,7 +6765,7 @@ var $;
                 return Object.keys(this.rooms_data()).map(function (id) { return _this.Room(id); });
             };
             $my_option_rooms.prototype.room_avatar = function (id) {
-                return $.$mol_file.relative(this.rooms_data()[id].avatar).path();
+                return $.$mol_file.relative("/my/option/image/" + id + "/avatar.jpg").path();
             };
             $my_option_rooms.prototype.room_name = function (id) {
                 return this.rooms_data()[id].name;

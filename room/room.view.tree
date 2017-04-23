@@ -4,14 +4,14 @@ $my_option_room $mol_page
 	data *
 		name \
 		greeting /
-		avatar \
-		photos /
+		photo_count 0
 	title <= name \
-	frequency 1
+	frequency 0.5
 	photos /
 	message_fail @ \With men it happens.. Not often, one time out of five. Let's try again?
-	message_wait @ \Интрига..
+	message_wait @ \Interesting..
 	level?val 0
+	start?val 0
 	tools /
 		<= Close $mol_link
 			arg *
@@ -36,14 +36,14 @@ $my_option_room $mol_page
 				<= History $mol_plot_pane
 					hue_base 170
 					- Legend null
-					graphs /
-						- <= Ruler_vert $mol_plot_ruler_vert
-							title <= ruler_vert_title @ \ 
+					graphs <= graphs /
 						<= Graph $mol_plot_group
 							graphs /
 								<= Graph_line $mol_plot_line
 								<= Graph_dot $mol_plot_dot
 							series <= series /
+						<= Start $mol_plot_line
+							series <= series_start /
 				<= Actions $mol_row
 					sub /
 						<= Bid_inc $mol_button
