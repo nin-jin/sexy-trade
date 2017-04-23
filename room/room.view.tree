@@ -1,0 +1,59 @@
+$my_option_room $mol_page
+	minimal_width 1200
+	id \
+	data *
+		name \
+		greeting /
+		avatar \
+		photos /
+	title <= name \
+	frequency 1
+	photos /
+	message_fail @ \С мужиками такое случается.. Не частно, один разок из пяти. Давай попробуем снова?
+	message_wait @ \Интрига..
+	level?val 0
+	tools /
+		<= Close $mol_link
+			arg *
+				room null
+			sub /
+				<= Close_icon $mol_icon_cross
+	Score!id $mol_view
+		sub /
+			<= Ballance $mol_view
+				sub /
+					<= ballance?val <= ballance_base 1000
+			\ (
+			<= Difference $mol_view
+				attr *
+					my_option_room_difference_good <= good true
+				sub /
+					<= difference \+0
+			\)
+	body /
+		<= Game $mol_view
+			sub /
+				<= History $mol_plot_pane
+					hue_base 170
+					- Legend null
+					graphs /
+						- <= Ruler_vert $mol_plot_ruler_vert
+							title <= ruler_vert_title @ \ 
+						<= Graph $mol_plot_group
+							graphs /
+								<= Graph_line $mol_plot_line
+								<= Graph_dot $mol_plot_dot
+							series <= series /
+				<= Actions $mol_row
+					sub /
+						<= Bid_inc $mol_button
+							title <= buy_title @ \Рост
+							event_click?val <=> event_up?val null
+						<= Bid_dec $mol_button
+							title <= sell_title @ \Снижение
+							event_click?val <=> event_down?val null
+				<= Message $mol_text
+					text <= message?val <= greeting \
+		<= Photo $mol_view
+			style *
+				backgroundImage <= photo_style \ 

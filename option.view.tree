@@ -1,0 +1,41 @@
+$my_option $mol_book
+	pages /
+		<= Placeholder $mol_book_placeholder
+			title <= placeholder_title @ \Они научит тебя зарабатывать!
+		<= Rooms $my_option_rooms
+			rooms_data <= rooms_data -
+		<= Room $my_option_room
+			id <= selected_id \
+			data <= selected_data *
+				name \
+				greeting /
+				avatar \
+				photos /
+	-
+	rooms_data *
+		EUR-RUR *
+			name \Евро - Рубль
+			greeting /
+				<= greeting_0 @ \Привет, меня зовут Катя. Ставишь на рост или понижение?
+				<= greeting_1 @ \Угадал, держи свою награду)
+				<= greeting_2 @ \Ты меня смущаешь..
+				<= greeting_3 @ \Ты просто мастер! Продолжим в [реальной игре](https://iqoption.com/)?
+			avatar \/my/option/image/EUR/avatar.jpg
+			photos /
+				\/my/option/image/EUR/1.jpg
+				\/my/option/image/EUR/2.jpg
+				\/my/option/image/EUR/3.jpg
+				\/my/option/image/EUR/4.jpg
+		USD-RUR *
+			name \Доллар - Рубль
+			greeting /
+				<= greeting_0 @ \Привет, меня зовут Катя. Ставишь на рост или понижение?
+				<= greeting_1 @ \Угадал, держи свою награду)
+				<= greeting_2 @ \Ты меня смущаешь..
+				<= greeting_3 @ \Ты просто мастер! Продолжим в [реальной игре](https://iqoption.com/)?
+			avatar \/my/option/image/EUR/avatar.jpg
+			photos /
+				\/my/option/image/EUR/1.jpg
+				\/my/option/image/EUR/2.jpg
+				\/my/option/image/EUR/3.jpg
+				\/my/option/image/EUR/4.jpg

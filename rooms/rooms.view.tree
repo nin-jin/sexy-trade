@@ -1,0 +1,19 @@
+$my_option_rooms $mol_page
+	minimal_width 400
+	title @ \Секси трейдинг
+	body /
+		<= Rooms $mol_list
+			rows <= rooms /
+	-
+	rooms_data *
+	-
+	Room!id $mol_link
+		arg <= room_arg!id *
+		sub /
+			<= Room_content!id $mol_row
+				sub /
+					<= Room_avatar!id $mol_image
+						uri <= room_avatar!id \
+					<= Room_name!id $mol_view
+						sub /
+							<= room_name!id \

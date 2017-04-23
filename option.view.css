@@ -1,0 +1,12 @@
+:root {
+	--mol_skin_base: #1D2434;
+	--mol_skin_base_text: hsl( 215 , 30% , 80% );
+	--mol_skin_light: #161B28;
+	--mol_skin_light_line: rgba( 50 , 50 , 50 , .75 );
+	--mol_skin_light_text: rgba( 200 , 200 , 250 , 1 );
+	--mol_skin_hover: none;
+}
+
+[mol_text_type="text-link"] {
+	text-decoration: underline;
+}

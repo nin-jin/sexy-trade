@@ -1,0 +1,86 @@
+[my_option_room] {
+	flex: 1000 1 800px;
+}
+
+[my_option_room_close] {
+	color: inherit;
+	padding: 1rem;
+}
+
+[my_option_room_body] {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row-reverse;
+}
+
+[my_option_room_photo] {
+	flex: 1 1 300px;
+	background-position: center;
+	background-size: cover;
+	min-height: 75%;
+}
+
+[my_option_room_game] {
+	flex:  1 1 300px;
+	display: flex;
+	flex-direction: column;
+}
+
+[my_option_room_history] {
+	height: 20vh;
+	background: var(--mol_skin_light);
+	flex: 0 0 auto;
+}
+
+[my_option_room_actions] {
+	flex-direction: column;
+	align-items: stretch;
+	flex: 0 0 auto;
+	box-shadow: none;
+}
+
+[my_option_room_bid_dec] {
+	flex: 1 1 50%;
+	background: var(--mol_skin_bad);
+	color: var(--mol_skin_bad_text);
+	padding: 1rem;
+}
+
+[my_option_room_bid_inc] {
+	flex: 1 1 50%;
+	background: var(--mol_skin_good);
+	color: var(--mol_skin_good_text);
+	padding: 1rem;
+}
+
+[my_option_room_message] {
+	margin: 1rem 1rem;
+	padding: 0 1rem;
+	color: #ff002b;
+}
+
+@keyframes my_option_room_score {
+	from {
+		transform: scale(3) translate( 0 , 100% );
+	}
+}
+
+[my_option_room_score] {
+	padding: 1rem;
+	animation: my_option_room_score ease-in .2s;
+	position: relative;
+	z-index: 1;
+	font-size: 1.25rem;
+	line-height: 1;
+}
+
+[my_option_room_ballance] {
+}
+
+[my_option_room_difference] {
+	color: var(--mol_skin_bad);
+}
+
+[my_option_room_difference_good] {
+	color: var(--mol_skin_good);
+}

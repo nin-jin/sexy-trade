@@ -1,0 +1,25 @@
+[my_option_rooms] {
+	flex: 1 1 400px;
+}
+
+[my_option_rooms_room] {
+	display: flex;
+	color: inherit;
+	font-size: 2rem;
+	padding: 0;
+}
+
+[my_option_rooms_room_card] {
+	flex: 1 1 auto;
+}
+
+[my_option_rooms_room_content] {
+	box-shadow: none;
+	align-items: center;
+}
+
+[my_option_rooms_room_avatar] {
+	border-radius: 50%;
+	width: 5rem;
+	height: 5rem;
+}
