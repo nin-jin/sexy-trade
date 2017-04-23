@@ -4612,13 +4612,13 @@ var $;
             var res = this.path() + '/' + path;
             while (true) {
                 var prev = res;
-                res = res.replace(/\/[^\/]+\/\.\.\//, '/');
+                res = res.replace(/\/[^\/.]+\/\.\.\//, '/');
                 if (prev === res)
                     break;
             }
             while (true) {
                 var prev = res;
-                res = res.replace(/\/\.\.\/[^\/]+\//, '/');
+                res = res.replace(/\/\.\.\/[^\/.]+\//, '/');
                 if (prev === res)
                     break;
             }
