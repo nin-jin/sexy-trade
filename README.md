@@ -1,3 +1,3 @@
 # Sexy trade
 
-http://sexy-trade.hyoo.ru/
+http://sexy-trade.hyoo.ru/#demo
