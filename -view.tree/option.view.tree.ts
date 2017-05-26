@@ -57,6 +57,26 @@ namespace $ { export class $my_option extends $mol_book {
 		return [].concat( this.Placeholder() , this.Rooms() , this.Room() )
 	}
 
+	/// greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?
+	greeting_0() {
+		return $mol_locale.text( this.locale_contexts() , "greeting_0" )
+	}
+
+	/// greeting_1 @ \Guessed, here your reward)
+	greeting_1() {
+		return $mol_locale.text( this.locale_contexts() , "greeting_1" )
+	}
+
+	/// greeting_2 @ \You're embarrassing me..
+	greeting_2() {
+		return $mol_locale.text( this.locale_contexts() , "greeting_2" )
+	}
+
+	/// greeting_3 @ \You are awesome! Continue in [the real game](https://iqoption.com/)?
+	greeting_3() {
+		return $mol_locale.text( this.locale_contexts() , "greeting_3" )
+	}
+
 	/// greeting_GBPJPY_0 @ \Hi, my name is Anita. Do you bid on call or put?
 	greeting_GBPJPY_0() {
 		return $mol_locale.text( this.locale_contexts() , "greeting_GBPJPY_0" )
@@ -153,7 +173,7 @@ namespace $ { export class $my_option extends $mol_book {
 	}
 
 	/// rooms_data * 
-	/// 	- GBPCHF * 
+	/// 	GBPCHF * 
 	/// 		name \GBP / CHF
 	/// 		greeting / 
 	/// 			<= greeting_0 
@@ -222,6 +242,11 @@ namespace $ { export class $my_option extends $mol_book {
 	/// 		photo_count 4
 	rooms_data() {
 		return ({
+			"GBPCHF" :  ({
+			"name" :  "GBP / CHF" ,
+			"greeting" :  [].concat( this.greeting_0() , this.greeting_1() , this.greeting_2() , this.greeting_3() ) ,
+			"photo_count" :  4 ,
+		}) ,
 			"GBPJPY" :  ({
 			"name" :  "GBP / JPY" ,
 			"greeting" :  [].concat( this.greeting_GBPJPY_0() , this.greeting_GBPJPY_1() , this.greeting_GBPJPY_2() , this.greeting_GBPJPY_3() , this.greeting_GBPJPY_4() ) ,

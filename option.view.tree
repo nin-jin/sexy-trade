@@ -12,7 +12,7 @@ $my_option $mol_book
 				photo_count 0
 	-
 	rooms_data *
-		- GBPCHF *
+		GBPCHF *
 			name \GBP / CHF
 			greeting /
 				<= greeting_0 @ \Hi, my name is Kate. Do you bid on call or put?

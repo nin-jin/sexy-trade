@@ -74,10 +74,6 @@ namespace $.$mol {
 			} )
 		}
 
-		demo() {
-			return $mol_state_arg.value( 'demo' ) != null
-		}
-
 		graphs() {
 			const next = [ this.Graph() ] as $mol_plot_graph[]
 			if( this.start() ) next.push( this.Start() )
@@ -92,15 +88,11 @@ namespace $.$mol {
 		@ $mol_mem()
 		series() {
 			const seed = Math.floor( $mol_state_time.now( 1000 / this.frequency() ) * this.frequency() / 1000 )
-			if( this.demo() ) {
-				const res = [] as number[]
-				for( let i = 0 ; i < 30 ; ++i ) {
-					res.push( Math.sin( seed + i ) * 10 % 3 )
-				}
-				return res
-			} else {
-				return $mol_http_resource_json.item<number[]>( `http://api.sexy-trade.hyoo.ru/${ this.id() }?${ seed }` ).json()
+			const res = [] as number[]
+			for( let i = 0 ; i < 30 ; ++i ) {
+				res.push( Math.sin( seed + i ) * 10 % 3 )
 			}
+			return res
 		}
 
 		tools() {
